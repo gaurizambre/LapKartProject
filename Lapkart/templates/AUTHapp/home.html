@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home page</title>
+<style>
+        .ul_navbar{
+        background-color:white;
+        list-style-type:none;
+        margin=0;
+        padding=0;
+        overflow:hidden;
+        }
+        li{
+        float:left;
+        }
+        li a
+        {
+        display:block;
+        text-decoration:none;
+        padding:15px 15px 15px 15px;
+        }
+        li a:hover
+        {
+        background-color:Orange;
+        }
+       body{
+        background-image: url("https://i.pinimg.com/originals/d6/9a/2b/d69a2bb8361c03cda15eec1df8a2a97d.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <header style="background-color:navy;color:white; text-align:center;">
+    <h1 style="background-color:black;color:white;">Lapkart</h1>
+
+
+
+</p>
+
+</header>
+<ul class="ul_navbar" style="margin-top:-20px">
+
+     <li><a href="/auth/home/">home</a></li>
+    <li><a href="/seller/show/">Show Laptops</a></li>
+    {% if user.is_authenticated %}
+    <li><a>Hello, {{user.username}}</a></li>
+    <li><a href="/auth/logout/">Logout</a></li>
+    {% else %}
+    <li><a href="/auth/login/">Login</a></li>
+    <li><a href="/auth/register/">Register</a></li>
+    {% endif %}
+</ul><br><br>
+
+    <img src="https://s.yimg.com/ny/api/res/1.2/tlECwXStRCcpgJLQ9hq0ZA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03MjA-/https://s.yimg.com/os/creatr-uploaded-images/2023-06/542c5620-1748-11ee-bade-78ffb1a5bc61"width="500"height="300">
+    <p style="border:5px double;border-size:30%;margin-left:45%; margin-top:-15%;height:50%;width:50%;background-color:white;padding-top:2%;padding-bottom:2%;padding-left:2%;padding-right:2%;">Designed with colors to match your vibe, the bold and youthful Vivobook series lets you show who you really are. They're the best laptops for getting the job done, with the best performance, and innovative features that boost productivity and give you the best user experience</p><br>
+     <p style="border:5px double;border-size:30%;margin-right:30%;background-color:white;padding-left:2%;width:50%;padding-top:2%;padding-bottom:2%;">Knowing what’s inside your computer is important to know which software, operating system or games are compatible with it. Be it your laptop or desktop, the hardware and software specifications are easily available. However, you have to know where to find them.
+In this article, we will help you find the key configuration details such as laptop model, Windows, RAM, storage capacity and other software details.</p>
+     <img src="https://johnlewis.scene7.com/is/image/JohnLewis/laptops-buying-guide-hero-130423"width="500"height="300"style="margin-left:50%;paddind-top:3%;padding-bootom:3%;margin-bootom:10%;">
+    <br><br><br>
+    <h2 style="text-align:center;background-color:white;color:black;">Login And Check Latops</h2>
+    <br>
+    <a href="/auth/logout/">
+    <button class="btn btn-primary"style="margin-left:45%;">LogOut</button>
+        </a>
+
+
+
+
+
+
+
+      <a href="/auth/logout/">
+
+    </a><br><br>
+    <p style="background-color:black;color:white;text-align:center;">Copyright, Lapkart Pvt.Ltd</p>
+    <footer style="text-align:center;background-color:grey;color-white;padding;10px 15px 15px 15px;">
+</footer>
+
+    <script src="<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Laptop</title>
+    <style>
+        .ul_navbar{
+        background-color:pink;
+        list-style-type:none;
+        margin=0;
+        padding=0;
+        overflow:hidden;
+        }
+        li{
+        float:left;
+        }
+        li a
+        {
+        display:block;
+        text-decoration:none;
+        padding:15px 15px 15px 15px;
+        }
+        li a:hover
+        {
+        background-color:Orange;
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body style="background-color:skyblue; border:2px solid;">
+    <header style="background-color:black;color:white; text-align:center;">
+    <h1>Lapkart</h1>
+</header>
+<ul class="ul_navbar" style="margin-top:-10px">
+
+     <li><a href="/auth/home/">home</a></li>
+    <li><a href="/seller/show/">Show Laptops</a></li>
+    {% if user.is_authenticated %}
+    <li><a>Hello, {{user.username}}</a></li>
+    <li><a href="/auth/logout/">Logout</a></li>
+    {% else %}
+    <li><a href="/auth/login/">Login</a></li>
+    <li><a href="/auth/register/">Register</a></li>
+    {% endif %}
+</ul><br>
+
+    <h2 style="text-align:center;">Show Laptop</h2>
+
+
+
+    <table class="table table-dark" style="width:50%; margin:auto;" >
+        <tr>
+                <th>company</th>
+                 <th>model</th>
+                 <th>RAM</th>
+                 <th>ROM</th>
+                 <th>price</th>
+                 <th>update</th>
+                 <th>delete</th>
+        </tr>
+        {% for lap in laptop_objs %}
+    <tr>
+        <td>{{lap.company_name}}</td>
+        <td>{{lap.model_name}}</td>
+        <td>{{lap.ram}}</td>
+        <td>{{lap.rom}}</td>
+        <td>{{lap.price}}</td>
+        <td> <a href="/seller/update/{{lap.id}}"><button class="btn btn-warning">Update</button></a></td>
+        <td>
+            <a href="/seller/delete/{{lap.id}}">
+
+                <button class="btn btn-danger">Delete</button>
+            </a>
+        </td>
+    </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+    <a href="/seller/add/">
+        <button class="btn btn-danger"style="margin-left:42%;">Add Laptop</button>
+    </a>
+    <a href = "/auth/logout/"><button class="btn btn-primary"> LogOut</button></a>
+
+    <footer style="text-align:center;background-color:grey;color-white;padding;10px 15px 15px 15px;">
+    <p style="background-color:black;color:white;">Copyright, Lapkart Pvt.Ltd</p>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
